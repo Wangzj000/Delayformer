@@ -12,7 +12,7 @@ The benchmark datasets used in Delayformer can be obtained in Time-Series-Librar
 ***
 Training and evaluation
 
-We provide all the scripts for the results exhibits in the paper, which can be found in `./scripts/` folder. Our training and evaluation outputs can be found in`./results/` folder corresponding to the paper.
+We provide all the scripts for the results exhibits in the paper, which can be found in `./scripts/` folder. Our training and evaluation outputs can be found in`./results/` folder corresponding to the paper. You can run the `.sh` files after downloading the datasets and puting them into `./datasets/` folder.
 ***
 
 ## Reference
