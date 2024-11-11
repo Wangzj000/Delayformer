@@ -10,7 +10,7 @@ In the experiments, we generated time series data of Lorentz systems in the same
 ## Using Delayformer
 The benchmark datasets used in Delayformer can be obtained in Time-Series-Library[<sup>2</sup>](#refer-anchor-2).
 ***
-Training and evaluation
+***Training and evaluation***
 
 We provide all the scripts for the results exhibits in the paper, which can be found in `./scripts/` folder. Our training and evaluation outputs can be found in`./results/` folder corresponding to the paper. You can run the `.sh` files after downloading the datasets and puting them into `./datasets/` folder.
 ***
