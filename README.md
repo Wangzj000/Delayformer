@@ -6,10 +6,15 @@ From the perspective of dynamical systems, Delayformer focuses on predicting **s
 ![image](structure.jpg)
 Previous spatiotemporal information (STI) transformation studies focused on univariate prediction, and thus, we proposed multivariate spatiotemporal information (mvSTI) transformation in this work (Figure b). Delayformer is designed for solving mvSTI (Figure c), which adopts an patching strategy silimilar like Vision Transformer (ViT), an encoder-only structure, and channel indepedence.
 ## Synthetic data used in Delayformer
-In the experiments, we generated time series data of Lorentz systems in the same way as ARNN^[https://github.com/RPcb/ARNN], including time-invariant Lorentz system. 
+In the experiments, we generated time series data of Lorentz systems in the same way as ARNN[<sup>1</sup>](#refer-anchor-1), including time-invariant Lorentz system. 
 ## Using Delayformer
-The benchmark datasets used in Delayformer can be obtained in Time-Series-Library^[https://github.com/thuml/Time-Series-Library].
+The benchmark datasets used in Delayformer can be obtained in Time-Series-Library[<sup>2</sup>](#refer-anchor-2).
 ***
 Training and evaluation
 
-We provide all the scripts for the results exhibits in the paper, which can be found in `./scripts/` folder
+We provide all the scripts for the results exhibits in the paper, which can be found in `./scripts/` folder. Our training and evaluation outputs can be found in`./results/` folder corresponding to the paper. You can run the `.sh` files after downloading the datasets and puting them into `./datasets/` folder.
+***
+
+## Reference
+[1] https://github.com/RPcb/ARNN.  
+[2] https://github.com/thuml/Time-Series-Library. 
