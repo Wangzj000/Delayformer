@@ -1,0 +1,79 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           ETTh2_192           Model:              delayformer         
+
+[1mData Loader[0m
+  Data:               ETTh2               Root Path:          /home/bingxing2/home/scx8939/wzj/all_datasets/
+  Data Path:          ETT-small/ETTh2.csv Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           192                 Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            256                 
+  n heads:            12                  e layers:           3                   
+  d layers:           1                   d FF:               512                 
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       10                  Batch Size:         128                 
+  Patience:           3                   Learning Rate:      0.0001              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_ETTh2_192_delayformer_ETTh2_ftM_sl96_ll48_pl192_dm256_nh12_el3_dl1_df512_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8353
+val 2689
+test 2689
+Epoch: 1 cost time: 8.291426181793213
+Epoch: 1, Steps: 65 | Train Loss: 0.5774097 Vali Loss: 0.2949715 Test Loss: 0.3897366
+Validation loss decreased (inf --> 0.294972).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 5.6045897006988525
+Epoch: 2, Steps: 65 | Train Loss: 0.5208773 Vali Loss: 0.2815096 Test Loss: 0.3979272
+Validation loss decreased (0.294972 --> 0.281510).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 5.5717926025390625
+Epoch: 3, Steps: 65 | Train Loss: 0.4955796 Vali Loss: 0.2808104 Test Loss: 0.3807718
+Validation loss decreased (0.281510 --> 0.280810).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 5.570311069488525
+Epoch: 4, Steps: 65 | Train Loss: 0.4789386 Vali Loss: 0.2772810 Test Loss: 0.3693944
+Validation loss decreased (0.280810 --> 0.277281).  Saving model ...
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 5.578306674957275
+Epoch: 5, Steps: 65 | Train Loss: 0.4701216 Vali Loss: 0.2814802 Test Loss: 0.3693261
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 5.579844951629639
+Epoch: 6, Steps: 65 | Train Loss: 0.4663697 Vali Loss: 0.2783665 Test Loss: 0.3685841
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 5.566932916641235
+Epoch: 7, Steps: 65 | Train Loss: 0.4624176 Vali Loss: 0.2788055 Test Loss: 0.3688625
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_ETTh2_192_delayformer_ETTh2_ftM_sl96_ll48_pl192_dm256_nh12_el3_dl1_df512_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2689
+test shape: (2689, 1, 192, 7) (2689, 1, 192, 7)
+test shape: (2689, 192, 7) (2689, 192, 7)
+mse:0.36939433217048645, mae:0.3911440074443817

@@ -1,0 +1,137 @@
+#!/bin/bash
+#SBATCH -o ETTm1_result.out
+#SBATCH -J ETTm1
+
+model_name=delayformer
+
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./datasets/ \
+  --data_path ETT-small/ETTm1.csv \
+  --model_id ETTm1_96 \
+  --model $model_name \
+  --data ETTm1 \
+  --features M \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 96 \
+  --lradj type1 \
+  --e_layers 3 \
+  --n_heads 12 \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --batch_size 128 \
+  --patience 3 \
+  --train_epochs 10 \
+  --l2 0 \
+  --d_model 128 \
+  --des 'Exp' \
+  --itr 1 \
+  --n_vars 7 \
+  --pe learnable_pe \
+  --n 27 \
+  --p1 5 \
+  --p2 3
+
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./datasets/ \
+  --data_path ETT-small/ETTm1.csv \
+  --model_id ETTm1_192 \
+  --model $model_name \
+  --data ETTm1 \
+  --features M \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 192 \
+  --lradj type1 \
+  --e_layers 3 \
+  --n_heads 12 \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --batch_size 128 \
+  --patience 3 \
+  --train_epochs 10 \
+  --l2 0 \
+  --d_model 128 \
+  --des 'Exp' \
+  --pe learnable_pe \
+  --itr 1 \
+  --n_vars 7 \
+  --n 27 \
+  --p1 5 \
+  --p2 3
+  
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./datasets/ \
+  --data_path ETT-small/ETTm1.csv \
+  --model_id ETTm1_336 \
+  --model $model_name \
+  --data ETTm1 \
+  --features M \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 336 \
+  --lradj type1 \
+  --e_layers 3 \
+  --n_heads 12 \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --batch_size 128 \
+  --patience 3 \
+  --train_epochs 10 \
+  --l2 0 \
+  --d_model 128 \
+  --des 'Exp' \
+  --itr 1 \
+  --pe learnable_pe \
+  --n_vars 7 \
+  --n 27 \
+  --p1 5 \
+  --p2 3
+  
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./datasets/ \
+  --data_path ETT-small/ETTm1.csv \
+  --model_id ETTm1_720 \
+  --model $model_name \
+  --data ETTm1 \
+  --features M \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 720 \
+  --lradj type1 \
+  --e_layers 3 \
+  --n_heads 12 \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --batch_size 128 \
+  --patience 3 \
+  --train_epochs 10 \
+  --l2 0 \
+  --d_model 128 \
+  --des 'Exp' \
+  --itr 1 \
+  --n_vars 7 \
+  --pe learnable_pe \
+  --n 27 \
+  --p1 5 \
+  --p2 3

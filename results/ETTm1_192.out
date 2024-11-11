@@ -1,0 +1,131 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           ETTm1_192           Model:              delayformer         
+
+[1mData Loader[0m
+  Data:               ETTm1               Root Path:          /home/bingxing2/home/scx8939/wzj/all_datasets/
+  Data Path:          ETT-small/ETTm1.csv Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           192                 Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            12                  e layers:           3                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       10                  Batch Size:         128                 
+  Patience:           3                   Learning Rate:      0.0001              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_ETTm1_192_delayformer_ETTm1_ftM_sl96_ll48_pl192_dm128_nh12_el3_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 34273
+val 11329
+test 11329
+	iters: 100, epoch: 1 | loss: 0.3676504
+	speed: 0.2035s/iter; left time: 523.2266s
+	iters: 200, epoch: 1 | loss: 0.3524467
+	speed: 0.1822s/iter; left time: 450.1125s
+Epoch: 1 cost time: 50.479430198669434
+Epoch: 1, Steps: 267 | Train Loss: 0.3682621 Vali Loss: 0.5184453 Test Loss: 0.3723451
+Validation loss decreased (inf --> 0.518445).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.3606487
+	speed: 1.1158s/iter; left time: 2570.6883s
+	iters: 200, epoch: 2 | loss: 0.3078974
+	speed: 0.1762s/iter; left time: 388.2796s
+Epoch: 2 cost time: 48.256123781204224
+Epoch: 2, Steps: 267 | Train Loss: 0.3390855 Vali Loss: 0.5146773 Test Loss: 0.3646419
+Validation loss decreased (0.518445 --> 0.514677).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.3127487
+	speed: 1.1083s/iter; left time: 2257.6340s
+	iters: 200, epoch: 3 | loss: 0.3522123
+	speed: 0.1755s/iter; left time: 340.0280s
+Epoch: 3 cost time: 47.964308977127075
+Epoch: 3, Steps: 267 | Train Loss: 0.3266567 Vali Loss: 0.5124686 Test Loss: 0.3599030
+Validation loss decreased (0.514677 --> 0.512469).  Saving model ...
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.3063028
+	speed: 1.1266s/iter; left time: 1994.1395s
+	iters: 200, epoch: 4 | loss: 0.3301927
+	speed: 0.1760s/iter; left time: 293.9223s
+Epoch: 4 cost time: 48.38345789909363
+Epoch: 4, Steps: 267 | Train Loss: 0.3209544 Vali Loss: 0.5187342 Test Loss: 0.3628822
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 5 | loss: 0.3282177
+	speed: 1.1165s/iter; left time: 1678.0342s
+	iters: 200, epoch: 5 | loss: 0.3215577
+	speed: 0.1760s/iter; left time: 246.9367s
+Epoch: 5 cost time: 48.56036615371704
+Epoch: 5, Steps: 267 | Train Loss: 0.3180764 Vali Loss: 0.5102428 Test Loss: 0.3572007
+Validation loss decreased (0.512469 --> 0.510243).  Saving model ...
+Updating learning rate to 6.25e-06
+	iters: 100, epoch: 6 | loss: 0.3221732
+	speed: 1.1271s/iter; left time: 1393.0435s
+	iters: 200, epoch: 6 | loss: 0.3699343
+	speed: 0.1760s/iter; left time: 199.9758s
+Epoch: 6 cost time: 48.496479988098145
+Epoch: 6, Steps: 267 | Train Loss: 0.3160795 Vali Loss: 0.5068634 Test Loss: 0.3557625
+Validation loss decreased (0.510243 --> 0.506863).  Saving model ...
+Updating learning rate to 3.125e-06
+	iters: 100, epoch: 7 | loss: 0.3004379
+	speed: 1.1226s/iter; left time: 1087.7709s
+	iters: 200, epoch: 7 | loss: 0.2996485
+	speed: 0.1756s/iter; left time: 152.5716s
+Epoch: 7 cost time: 48.42422866821289
+Epoch: 7, Steps: 267 | Train Loss: 0.3151472 Vali Loss: 0.5065538 Test Loss: 0.3562284
+Validation loss decreased (0.506863 --> 0.506554).  Saving model ...
+Updating learning rate to 1.5625e-06
+	iters: 100, epoch: 8 | loss: 0.2843049
+	speed: 1.1170s/iter; left time: 784.1569s
+	iters: 200, epoch: 8 | loss: 0.3536026
+	speed: 0.1760s/iter; left time: 105.9733s
+Epoch: 8 cost time: 48.33540654182434
+Epoch: 8, Steps: 267 | Train Loss: 0.3147058 Vali Loss: 0.5083271 Test Loss: 0.3565269
+Validation loss decreased (0.506554 --> 0.508327).  Saving model ...
+Updating learning rate to 7.8125e-07
+	iters: 100, epoch: 9 | loss: 0.3387311
+	speed: 1.1263s/iter; left time: 489.9303s
+	iters: 200, epoch: 9 | loss: 0.3554153
+	speed: 0.1760s/iter; left time: 58.9691s
+Epoch: 9 cost time: 48.84720754623413
+Epoch: 9, Steps: 267 | Train Loss: 0.3145034 Vali Loss: 0.5060475 Test Loss: 0.3561817
+Validation loss decreased (0.508327 --> 0.506048).  Saving model ...
+Updating learning rate to 3.90625e-07
+	iters: 100, epoch: 10 | loss: 0.3325338
+	speed: 1.1101s/iter; left time: 186.4899s
+	iters: 200, epoch: 10 | loss: 0.2933612
+	speed: 0.1758s/iter; left time: 11.9513s
+Epoch: 10 cost time: 48.084548234939575
+Epoch: 10, Steps: 267 | Train Loss: 0.3142004 Vali Loss: 0.5073479 Test Loss: 0.3561994
+Validation loss decreased (0.506048 --> 0.507348).  Saving model ...
+Updating learning rate to 1.953125e-07
+>>>>>>>testing : long_term_forecast_ETTm1_192_delayformer_ETTm1_ftM_sl96_ll48_pl192_dm128_nh12_el3_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 11329
+test shape: (11329, 1, 192, 7) (11329, 1, 192, 7)
+test shape: (11329, 192, 7) (11329, 192, 7)
+mse:0.35619935393333435, mae:0.38158196210861206

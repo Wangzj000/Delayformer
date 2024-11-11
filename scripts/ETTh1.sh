@@ -1,0 +1,142 @@
+#!/bin/bash
+#SBATCH -o ETTh1_result.out
+#SBATCH -J ETTh1
+
+model_name=delayformer
+
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./datasets/ \
+  --data_path ETT-small/ETTh1.csv \
+  --model_id ETTh1_96 \
+  --model $model_name \
+  --data ETTh1 \
+  --features M \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 96 \
+  --lradj type1 \
+  --e_layers 3 \
+  --n_heads 12 \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --batch_size 128 \
+  --patience 5 \
+  --train_epochs 10 \
+  --l2 0 \
+  --d_model 256 \
+  --d_ff 512 \
+  --des 'Exp' \
+  --itr 1 \
+  --pe learnable_pe \
+  --n_vars 7 \
+  --n 27 \
+  --p1 5 \
+  --p2 3
+
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./datasets/ \
+  --data_path ETT-small/ETTh1.csv \
+  --model_id ETTh1_192 \
+  --model $model_name \
+  --data ETTh1 \
+  --features M \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 192 \
+  --lradj type1 \
+  --e_layers 3 \
+  --n_heads 12 \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --batch_size 128 \
+  --patience 5 \
+  --train_epochs 10 \
+  --l2 0 \
+  --d_model 256 \
+  --d_ff 512 \
+  --des 'Exp' \
+  --itr 1 \
+  --pe learnable_pe \
+  --n_vars 7 \
+  --n 27 \
+  --p1 5 \
+  --p2 3
+
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./datasets/ \
+  --data_path ETT-small/ETTh1.csv \
+  --model_id ETTh1_336 \
+  --model $model_name \
+  --data ETTh1 \
+  --features M \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 336 \
+  --lradj type1 \
+  --e_layers 3 \
+  --n_heads 12 \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --batch_size 128 \
+  --patience 5 \
+  --train_epochs 10 \
+  --l2 0 \
+  --d_model 128 \
+  --d_ff 1024 \
+  --des 'Exp' \
+  --itr 1 \
+  --pe fix_pe \
+  --temporal_encoding \
+  --n_vars 7 \
+  --n 49 \
+  --p1 6 \
+  --p2 7
+
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./datasets/ \
+  --data_path ETT-small/ETTh1.csv \
+  --model_id ETTh1_720 \
+  --model $model_name \
+  --data ETTh1 \
+  --features M \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 720 \
+  --lradj type1 \
+  --e_layers 3 \
+  --n_heads 12 \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --batch_size 128 \
+  --patience 5 \
+  --train_epochs 10 \
+  --l2 0 \
+  --d_model 128 \
+  --des 'Exp' \
+  --itr 1 \
+  --pe fix_pe \
+  --temporal_encoding \
+  --n_vars 7 \
+  --n 49 \
+  --p1 6 \
+  --p2 7

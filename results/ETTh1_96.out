@@ -1,0 +1,91 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           ETTh1_96            Model:              delayformer         
+
+[1mData Loader[0m
+  Data:               ETTh1               Root Path:          /home/bingxing2/home/scx8939/wzj/all_datasets/
+  Data Path:          ETT-small/ETTh1.csv Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           96                  Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            256                 
+  n heads:            12                  e layers:           3                   
+  d layers:           1                   d FF:               512                 
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       10                  Batch Size:         128                 
+  Patience:           5                   Learning Rate:      0.0001              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_ETTh1_96_delayformer_ETTh1_ftM_sl96_ll48_pl96_dm256_nh12_el3_dl1_df512_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 14.275474309921265
+Epoch: 1, Steps: 66 | Train Loss: 0.4338402 Vali Loss: 0.7543523 Test Loss: 0.4264698
+Validation loss decreased (inf --> 0.754352).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 11.502237319946289
+Epoch: 2, Steps: 66 | Train Loss: 0.3844969 Vali Loss: 0.7301001 Test Loss: 0.4086115
+Validation loss decreased (0.754352 --> 0.730100).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 11.48610234260559
+Epoch: 3, Steps: 66 | Train Loss: 0.3619035 Vali Loss: 0.7257447 Test Loss: 0.3910931
+Validation loss decreased (0.730100 --> 0.725745).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 11.498219728469849
+Epoch: 4, Steps: 66 | Train Loss: 0.3505862 Vali Loss: 0.7299849 Test Loss: 0.3841948
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 11.466333389282227
+Epoch: 5, Steps: 66 | Train Loss: 0.3447255 Vali Loss: 0.7243833 Test Loss: 0.3817599
+Validation loss decreased (0.725745 --> 0.724383).  Saving model ...
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 11.433913469314575
+Epoch: 6, Steps: 66 | Train Loss: 0.3414528 Vali Loss: 0.7235263 Test Loss: 0.3793507
+Validation loss decreased (0.724383 --> 0.723526).  Saving model ...
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 11.46453046798706
+Epoch: 7, Steps: 66 | Train Loss: 0.3394017 Vali Loss: 0.7125024 Test Loss: 0.3800645
+Validation loss decreased (0.723526 --> 0.712502).  Saving model ...
+Updating learning rate to 1.5625e-06
+Epoch: 8 cost time: 11.43737268447876
+Epoch: 8, Steps: 66 | Train Loss: 0.3386828 Vali Loss: 0.7184353 Test Loss: 0.3796476
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 7.8125e-07
+Epoch: 9 cost time: 11.46534252166748
+Epoch: 9, Steps: 66 | Train Loss: 0.3381395 Vali Loss: 0.7170931 Test Loss: 0.3788545
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 3.90625e-07
+Epoch: 10 cost time: 11.472760677337646
+Epoch: 10, Steps: 66 | Train Loss: 0.3376892 Vali Loss: 0.7125573 Test Loss: 0.3788728
+Validation loss decreased (0.712502 --> 0.712557).  Saving model ...
+Updating learning rate to 1.953125e-07
+>>>>>>>testing : long_term_forecast_ETTh1_96_delayformer_ETTh1_ftM_sl96_ll48_pl96_dm256_nh12_el3_dl1_df512_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+test shape: (2785, 1, 96, 7) (2785, 1, 96, 7)
+test shape: (2785, 96, 7) (2785, 96, 7)
+mse:0.3788726329803467, mae:0.4008373022079468
