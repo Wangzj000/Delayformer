@@ -1,16 +1,15 @@
-# From: gluonts/src/gluonts/time_feature/_base.py
-# Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# This file includes code adapted from the following open-source projects:
 #
-# Licensed under the Apache License, Version 2.0 (the "License").
-# You may not use this file except in compliance with the License.
-# A copy of the License is located at
+# 1. GluonTS (Apache License 2.0)
+#    https://github.com/awslabs/gluonts/blob/dev/src/gluonts/time_feature/_base.py
+#    Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
+# 2. Time-Series-Library (MIT License)
+#    https://github.com/thuml/Time-Series-Library/blob/main/utils/timefeatures.py
+#    Copyright (c) THUML
 #
-# or in the "license" file accompanying this file. This file is distributed
-# on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-# express or implied. See the License for the specific language governing
-# permissions and limitations under the License.
+# Licensed under their respective open-source licenses.
+# Modifications may have been made to the original code.
 
 from typing import List
 
